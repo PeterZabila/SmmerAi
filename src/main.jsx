@@ -1,5 +1,14 @@
-import { render } from 'preact'
-import { App } from './App.js'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 
+import App from "./App";
+import { store } from "./services/store";
 
-render(<App />, document.getElementById('app'))
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
